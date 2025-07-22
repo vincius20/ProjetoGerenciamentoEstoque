@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Adicionar Categoria";
+}
+
+<h2>Criar Categoria</h2>
+<div class="container mt-5">
+    <form action="~/categories/addcategory" method="post">
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+                <label for="CategoryName" class="col-form-label">Nome da Categoria</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control categoria" name="CategoryName" placeholder="Digite o nome da Categoria">
+            </div>
+            <button type="submit" class="btn btn-primary btn-dark">Adicionar Categoria</button>
+        </div>
+    </form>
+
+    @if (ViewBag.Errors != null)
+    {
+        <div class="text-red ml">
+            <ul>
+                @foreach (string error in ViewBag.Errors)
+                {
+                    <li class="ml">@error</li>
+                }
+            </ul>
+        </div>
+    }
+</div>

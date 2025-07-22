@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Adicionar Produto";
+    List<CategoryResponse> categories = ViewBag.Categories;
+}
+
+<div class="container mt-5">
+    <form action="~/products/addproduct" method="post">
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+                <label for="ProductName" class="col-form-label">Nome do Produto</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" name="ProductName" placeholder="Digite o nome do Produto">
+            </div>
+        </div>
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+                <label for="Stock" class="col-form-label">Estoque</label>
+            </div>
+            <div class="col-auto">
+                <input type="number" class="form-control" name="Stock" placeholder="Digite a quantidade no estoque">
+            </div>
+        </div>
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+                <label for="Price" class="col-form-label">Preço do Produto</label>
+            </div>
+            <div class="col-auto">
+                <input type="number" step=".01" class="form-control" name="Price" placeholder="Digite o preço do Produto">
+            </div>
+        </div>
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+                <label for="CategoryId" class="col-form-label">Selecione a Categoria</label>
+            </div>
+            <div class="col-auto">
+                <select name="CategoryId" class="form-select">
+                    @{
+                        if (categories != null)
+                        {
+                            foreach (CategoryResponse category in categories)
+                            {
+                                <option value="@category.CategoryId">@category.CategoryName</option>
+                            }
+                        }
+
+                    }
+                </select>
+            </div>
+        </div>
+
+   
+        <button type="submit" class="btn btn-primary btn-dark">Adicionar Produto</button>
+    </form>
+</div>

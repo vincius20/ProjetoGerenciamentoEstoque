@@ -1,0 +1,30 @@
+﻿.back {
+    background-color: #f7f7f7;
+}
+
+.input-categoria {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+    .input-categoria::placeholder {
+        color: #aaa;
+        font-style: italic;
+    }
+
+    .input-categoria:focus {
+        border-color: #4B0082;
+        outline: none;
+    }
+
+.text-red {
+    color: #ff0000;
+}
+
+.ml {
+    margin-left: 10px;
+}
